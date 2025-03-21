@@ -19,7 +19,7 @@ export class UserService {
     );
   }
 
-  getUser(uuid: number = 1): Observable<any> {
+  getUser(uuid: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/?uuid=${uuid}`).pipe(
       map(response => this.processResponse(response))
     );
@@ -31,7 +31,7 @@ export class UserService {
       results: response.results?.map((user: any) => (<User>{
         uuid: user.login.uuid,
         firstName: user.name.first,
-        lastname: user.name.last,
+        lastName: user.name.last,
         gender: user.gender,
         address: `${user.location.street.number} ${user.location.country}`,
         email: user.email,
