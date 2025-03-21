@@ -29,7 +29,7 @@
             <td>{{ user.email }}</td>
             <td>{{ user.address }}</td>
             <td>
-                <button routerLink="['/user', user.uuid]" type="button" class="button btn btn-primary">View</button>
+                <button [routerLink]="['/user', user.uuid]" type="button" class="button btn btn-primary">View</button>
             </td>
         </tr>
     </tbody>
